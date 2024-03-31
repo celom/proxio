@@ -1,5 +1,5 @@
 {
-  "name": "@jotai-supabase/source",
+  "name": "@celom/jotai-supabase",
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {

@@ -15,6 +15,31 @@ import {
 } from '../models/store.model';
 import { createSourceMap, normalizeData } from './utils';
 
+/**
+ * Creates a store used to fetch and manage Supabase data,
+ * with the provided source and Supabase client.
+ * 
+ * @param source - The source reference object of functions with Supabase queries.
+ * @param dbClient - The Supabase client to be used for the store.
+ * @returns A function that is used to fetch and manage Supabase data.
+ * @example
+ * ```tsx
+ * import { createBrowserClient } from "@supabase/ssr";
+ * import { createStore } from '../store/create-store';
+ * import sources from './sources';
+ * 
+ * export const useStore = createStore(
+ *   { ...sources },
+ *   createBrowserClient('supabaseUrl', 'supabaseKey'),
+ * );
+ * const useStore = createStore(source, dbClient);
+ * 
+ * const Component = () => {
+ *  const data = useStore('key');
+ * return <div>{data}</div>;
+ * };
+ * ```
+ */
 export function createStore<S extends RecordMap>(
   source: S,
   dbClient: SupabaseClient<never>,
@@ -34,7 +59,11 @@ export function createStore<S extends RecordMap>(
 
     useCallback(function initializeAtomProps() {
       /**
-       * Initializes the props atom with the provided props.
+       * Because the props atom is a dependency for the source atom,
+       * it is set only if its value differs from the existing value.
+       * 
+       * This is to assure that the source atom is not re-initialized
+       * if the props value is the same.
        */
       if ((props && !isEqual(props, existingPropsAtom)) || options?.force) {
         useSetAtom(store.props[key] as never)(props);

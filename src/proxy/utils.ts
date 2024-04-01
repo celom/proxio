@@ -9,7 +9,7 @@ import {
   SourceParams,
   SourcePropMap,
   SourceReturnType,
-} from '../models/proxy.model';
+} from './proxy.model';
 
 /**
  * Creates a prop map object that contains atoms for each function params in the source object.

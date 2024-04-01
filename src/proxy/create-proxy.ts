@@ -12,7 +12,7 @@ import {
   RecordMap,
   SourceParams,
   SourceReturnType,
-} from '../models/proxy.model';
+} from './proxy.model';
 import { createReferenceMap, normalizeData } from './utils';
 
 export function createProxy<S extends RecordMap>(

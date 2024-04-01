@@ -1,4 +1,4 @@
-export * from './models/proxy.model';
+export * from './proxy/proxy.model';
 
-export * from './store/create-proxy';
-export * from './store/utils';
+export * from './proxy/create-proxy';
+export * from './proxy/utils';

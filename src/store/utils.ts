@@ -7,12 +7,12 @@ import {
   RecordMap,
   SourceMap,
   SourceParams,
+  SourcePropMap,
   SourceReturnType,
-  StorePropMap,
-} from '../models/store.model';
+} from '../models/proxy.model';
 
 /**
- * Create a prop map object that contains atoms for each function params in the source object.
+ * Creates a prop map object that contains atoms for each function params in the source object.
  */
 export function createPropsMap<S extends RecordMap>(source: S): PropMap<S> {
   const propsMap: PropMap<S> = {} as PropMap<S>;
@@ -23,17 +23,17 @@ export function createPropsMap<S extends RecordMap>(source: S): PropMap<S> {
 }
 
 /**
- * Create a source map object that contains atoms for each function in the source object.
+ * Creates a reference object mapping the atoms of each source function with their matching props.
  */
-export function createSourceMap<S extends RecordMap>(
+export function createReferenceMap<S extends RecordMap>(
   sourceRef: S,
-  dbClient: SupabaseClient<never>,
-): StorePropMap<S> {
+  dbClient: SupabaseClient<never>
+): SourcePropMap<S> {
   const props = createPropsMap(sourceRef);
   const source = {} as SourceMap<S>;
   for (const key in sourceRef) {
     source[key] = atom(async (get) =>
-      sourceRef[key](get(props[key]), dbClient),
+      sourceRef[key](get(props[key]), dbClient)
     ) as Atom<SourceReturnType<S, keyof S>>;
   }
   return { source, props };

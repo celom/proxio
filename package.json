@@ -1,6 +1,6 @@
 {
   "name": "@celom/proxio",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A React hook that caches async method responses with Jotai.",
   "author": "Carlos Mimoso",
   "keywords": [
@@ -10,13 +10,9 @@
     "hook",
     "async"
   ],
-  "repository": {
-    "url": "https://github.com/celom/proxio",
-    "type": "git"
-  },
   "license": "MIT",
   "scripts": {
-    "build": "nx build",
+    "build": "nx build --prod",
     "test": "nx test",
     "prepack": "nx build"
   },
@@ -56,6 +52,13 @@
     "includedScripts": []
   },
   "type": "module",
-  "main": "./src/index.js",
-  "typings": "./src/index.d.ts"
+  "main": "dist/proxio/src/index.js",
+  "typings": "dist/proxio/src/index.d.ts",
+  "repository": {
+    "url": "https://github.com/celom/proxio",
+    "type": "git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
 }

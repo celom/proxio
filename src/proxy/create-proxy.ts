@@ -14,7 +14,7 @@ import {
 } from './proxy.model';
 import { createReferenceMap, normalizeData } from './utils';
 
-export function createProxy<S extends RecordMap>(source: S, dbClient: any) {
+export function createProxy<S extends RecordMap>(source: S, dbClient: never) {
   const emptyAtom = atom({});
   const refMap = createReferenceMap(source, dbClient);
   const useProxy = <K extends keyof S, SUSPENSE extends boolean>(

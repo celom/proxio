@@ -61,8 +61,5 @@
   "repository": {
     "url": "https://github.com/celom/proxio",
     "type": "git"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   }
 }

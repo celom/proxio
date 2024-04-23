@@ -1,15 +1,31 @@
 {
-  "name": "jotai-supabase",
+  "name": "@celom/proxio",
   "version": "0.0.1",
+  "description": "A React hook that caches async method responses with Jotai.",
+  "author": "Carlos Mimoso",
+  "keywords": [
+    "jotai",
+    "cache",
+    "react",
+    "hook",
+    "async"
+  ],
+  "repository": {
+    "url": "https://github.com/celom/proxio",
+    "type": "git"
+  },
   "license": "MIT",
   "scripts": {
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "prepack": "nx build"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.41.1",
     "jotai": "^2.7.2",
-    "radash": "^12.1.0",
+    "radash": "^12.1.0"
+  },
+  "peerDependencies": {
     "react": "^18.2.0",
     "tslib": "^2.3.0"
   },

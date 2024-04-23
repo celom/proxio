@@ -1,6 +1,5 @@
 'use client';
 
-import { SupabaseClient } from '@supabase/supabase-js';
 import { Atom, atom, useAtomValue, useSetAtom } from 'jotai';
 import { loadable } from 'jotai/utils';
 import { Loadable } from 'jotai/vanilla/utils/loadable';
@@ -15,10 +14,7 @@ import {
 } from './proxy.model';
 import { createReferenceMap, normalizeData } from './utils';
 
-export function createProxy<S extends RecordMap>(
-  source: S,
-  dbClient: SupabaseClient<never>
-) {
+export function createProxy<S extends RecordMap>(source: S, dbClient: any) {
   const emptyAtom = atom({});
   const refMap = createReferenceMap(source, dbClient);
   const useProxy = <K extends keyof S, SUSPENSE extends boolean>(

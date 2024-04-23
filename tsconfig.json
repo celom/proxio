@@ -17,7 +17,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@celom/jotai-supabase": [
+      "@celom/proxio": [
         "src/index.ts"
       ]
     }

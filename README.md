@@ -1,6 +1,6 @@
-# Jotai-Supabase
+# proxio
 
-jotai-supabase is a project that combines the power of Jotai state management with the Supabase backend-as-a-service platform. It's built with React and TypeScript.
+Proxio combines the power of Jotai state management with Typescript to provide simple and efficient way to handle async requests in a React application.
 
 ## Installation
 

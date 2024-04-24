@@ -1,5 +1,11 @@
 # @celom/proxio
 
+## 0.1.0
+
+### Minor Changes
+
+- removes type and utils exports from lib
+
 ## 0.0.15
 
 ### Patch Changes

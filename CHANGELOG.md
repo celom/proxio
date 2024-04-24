@@ -1,5 +1,11 @@
 # @celom/proxio
 
+## 0.0.11
+
+### Patch Changes
+
+- paths
+
 ## 0.0.10
 
 ### Patch Changes

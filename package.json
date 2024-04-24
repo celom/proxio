@@ -60,7 +60,7 @@
   ],
   "type": "module",
   "main": "/dist/proxio/src/index.js",
-  "types": "/src/index.d.ts",
+  "types": "/dist/proxio/src/index.d.ts",
   "repository": {
     "url": "https://github.com/celom/proxio",
     "type": "git"

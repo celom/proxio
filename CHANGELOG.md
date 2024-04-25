@@ -1,5 +1,11 @@
 # @celom/proxio
 
+## 0.2.0
+
+### Minor Changes
+
+- remove supabase dependency & add readme and playground files
+
 ## 0.1.0
 
 ### Minor Changes

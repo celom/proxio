@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { SupabaseClient } from '@supabase/supabase-js';
 import { Atom, atom } from 'jotai';
 import {
   PropMap,
@@ -27,13 +26,13 @@ export function createPropsMap<S extends RecordMap>(source: S): PropMap<S> {
  */
 export function createReferenceMap<S extends RecordMap>(
   sourceRef: S,
-  dbClient: SupabaseClient<never>
+  ...args: any[]
 ): SourcePropMap<S> {
   const props = createPropsMap(sourceRef);
   const source = {} as SourceMap<S>;
   for (const key in sourceRef) {
     source[key] = atom(async (get) =>
-      sourceRef[key](get(props[key]), dbClient)
+      sourceRef[key](get(props[key]), args)
     ) as Atom<SourceReturnType<S, keyof S>>;
   }
   return { source, props };

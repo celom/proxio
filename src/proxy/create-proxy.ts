@@ -14,9 +14,10 @@ import {
 } from './proxy.model';
 import { createReferenceMap, normalizeData } from './utils';
 
-export function createProxy<S extends RecordMap>(source: S, dbClient: never) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function createProxy<S extends RecordMap>(source: S, ...args: any[]) {
   const emptyAtom = atom({});
-  const refMap = createReferenceMap(source, dbClient);
+  const refMap = createReferenceMap(source, args);
   const useProxy = <K extends keyof S, SUSPENSE extends boolean>(
     key: K,
     props?: SourceParams<S, K>,

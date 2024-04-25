@@ -20,7 +20,6 @@
     "release": "nx run-many --target=lint,test,build --all && changeset publish"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.41.1",
     "jotai": "^2.7.2",
     "radash": "^12.1.0"
   },

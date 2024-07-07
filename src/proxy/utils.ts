@@ -11,7 +11,8 @@ import {
 } from './proxy.model';
 
 /**
- * Creates a prop map object that contains atoms for each function params in the source object.
+ * Creates a prop map object that contains atoms for each
+ * function params in the source object.
  */
 export function createPropsMap<S extends RecordMap>(source: S): PropMap<S> {
   const propsMap: PropMap<S> = {} as PropMap<S>;
@@ -22,7 +23,8 @@ export function createPropsMap<S extends RecordMap>(source: S): PropMap<S> {
 }
 
 /**
- * Creates a reference object mapping the atoms of each source function with their matching props.
+ * Creates a reference object mapping the atoms of each
+ * source function with their matching props.
  */
 export function createReferenceMap<S extends RecordMap>(
   sourceRef: S,
@@ -40,7 +42,7 @@ export function createReferenceMap<S extends RecordMap>(
 
 /**
  * Normalizes the output to ensure that the response is always
- * wrapped in a data object, confirming to the Loadable type.
+ * wrapped in a data object, conforming to the Loadable type.
  */
 export function normalizeData(source: any) {
   const { state, count, data: sourceData, error } = source;

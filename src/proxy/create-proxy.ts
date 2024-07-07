@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 'use client';
 
 import { Atom, atom, useAtomValue, useSetAtom } from 'jotai';
@@ -14,7 +16,6 @@ import {
 } from './proxy.model';
 import { createReferenceMap, normalizeData } from './utils';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function createProxy<S extends RecordMap>(source: S, ...args: any[]) {
   const emptyAtom = atom({});
   const refMap = createReferenceMap(source, args);
